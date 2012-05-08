@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>.:Humor de la Semana:.</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <link href="/static/css/layout.css" rel="stylesheet" type="text/css"
+               media="screen,projection" />
+        <link href="/static/css/jquery.ennui.contentslider.css" rel="stylesheet" type="text/css" media="screen,projection" />
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-16950448-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div id="wraphumor" class="eround">
+            <div id="titlehumor"><h2>Humor de la semana</h2></div>
+            <div id="one" class="contentslider">
+                <div class="cs_wrapper">
+                    <div class="cs_slider">
+                        {% for humor in imghumor.items %}
+                        <div class="cs_article">
+                            <a href="#">
+                                <img src="/media{{ humor.1 }}" alt="Humor de la Semana"
+                                        />
+                            </a>
+                        </div>
+
+                        {% endfor %}
+
+                    </div><!-- End cs_slider -->
+                </div><!-- End cs_wrapper -->
+            </div><!-- End contentslider -->
+        </div>
+        <div id="back"><a href="javascript:history.back();">Cerrar</a> </div>
+        <div id="enlacessocial" class="eround5">
+            <script>function fbs_click()
+            {u=location.href;t=document.title;
+                window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');
+                return false;}</script><a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" class="fb_share_button" onClick="return fbs_click()" target="_blank" style="text-decoration:none;"><img src="/static/images/face_icon.jpg" border="0"/></a>
+            <script>function send_click() {data_url=location.href;
+                data_text=document.title;
+                window.open('http://twitter.com/share?count=none&text='+(data_text)+'&url='+encodeURIComponent(data_url)+'&via=semanarioviva','sharer','toolbar=0,status=0,width=626,height=436');
+                return false;}</script><a href="http://twitter.com/share"
+                                          class="twitter-share-button"
+                                          data-lang="es" onClick="return
+                                              send_click()" target="_blank"
+                                          style="text-decoration:none;">
+            <img src="/static/images/twitter_icon.jpg" border="0"/></a>
+        </div>
+        <script type="text/javascript">
+            swfobject.registerObject("FlashID");
+        </script>
+        <script type="text/javascript"
+                src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript"
+                src="/static/js/jquery.ennui.contentslider.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#one').ContentSlider({
+                                            width : '860px',
+                                            height : '570px',
+                                            speed : 800,
+                                            easing : 'easeInOutBack'
+                                        });
+            });
+        </script>
+    </body>
+</html>

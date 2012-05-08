@@ -1,0 +1,228 @@
+body{
+    background: url("/static/images/furley_bg.png") fixed repeat;
+    font-family: Verdana, Geneba, sans-serif;
+    text-align: center;
+}
+
+header{
+    background-color: #ffffff;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+header img{
+    max-height: 200px;
+    max-width: 680px;
+}
+
+h1, h2, h3, h4, h5{
+    margin: 0;
+    padding: 0;
+}
+
+article, footer{
+    background: #ffffff 0;
+    margin-bottom: 5px;
+    max-width: 680px;
+    padding: 1%;
+    width: 98%;
+}
+
+div#wrap{
+    margin: 0 auto;
+    max-width: 680px;
+    width: 100%;
+}
+
+div#enlacessocial{
+    background-color: #ffffff;
+    padding: 5px;
+    position: fixed;
+    right: -5px;
+    text-align: left;
+    top: 250px;
+    width: 32px;
+}
+
+/* INDEX */
+div#contentAbstract{
+    display: inline-block;
+    font-size: 13px;
+    width: 100%;
+}
+div#title{
+    display: inline-block;
+    text-align: left;
+    width: 79%;
+}
+div#sectionImg img{
+    max-height: 73px;
+    max-width: 680px;
+}
+div#thumbs{
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+}
+div#thumbs img{
+    max-height: 203px;
+}
+div#author{
+    display: inline-block;
+    width: 79%;
+}
+div#abstrac{
+    display: inline-block;
+    font-size: 13px;
+    padding: 1%;
+    text-align: justify;
+    width: 77%;
+}
+div#enlacesArticulo{
+    display: inline-block;
+    text-align: right;
+    width: 98%
+}
+div#imgHumor{
+    margin: 0 auto;
+    padding-bottom: 10px;
+    width: 100%
+}
+div#imgHumor img{
+    max-height: 298px;
+    max-width: 386px;
+}
+div#readmore, div#pdf{
+    display: inline-block;
+}
+div#creditosHumor{
+    background-color: #eeeeee;
+    font-size: 10px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+div#binfo img{
+    max-height: 150px;
+    max-width: 650px;
+}
+
+/* HUMOR */
+div#wraphumor{
+    background: #333333;
+    border:0;
+    display: inline-block;
+    margin:0 auto;
+    max-width: 880px;
+    padding: 10px;
+    text-align:center;
+    width:100%;
+}
+div#titlehumor{
+    color: #ffffff;
+}
+
+/* ARTICULO */
+div#contentArticle{
+    font-size: 13px;
+    width: 100%;
+}
+div#titleA{
+    display: inline-block;
+    width: 90%
+}
+div#authorA{
+    display: inline-block;
+    width: 90%
+}
+div#imgArticle{
+    display: inline-block;
+    float: left;
+    padding: 0 10px 10px 0;
+}
+div#imgArticle img{
+    max-height: 298px;
+    max-width: 386px;
+}
+div#comments{
+    text-align: justify;
+    font-size: 12px;
+}
+div#infoEdA{
+    width: 100%
+}
+div#infoEdA p{
+    font-size: 10px;
+}
+div#closeArticle{
+    text-align: right;
+    width: 100%
+}
+@media screen and (max-width:480px) {
+    body{
+        background: url("/static/images/furley_bg.png") repeat;
+        overflow-x: hidden;
+    }
+    div#enlacessocial{
+        top: 180px;
+    }
+    /* INDEX */
+    div#thumbs{
+        display: none;
+    }
+    div#title{
+        width: 88%;
+    }
+    div#author{
+        width: 88%;
+    }
+    div#abstrac{
+        width: 88%;
+    }
+    div#enlacesArticulo{
+        text-align: center;
+        width: 88%
+    }
+    /* ARTICULO */
+    div#titleA{
+        width: 95%;
+    }
+    div#authorA{
+        width: 95%;
+    }
+    div#imgArticle{
+        display: none;
+    }
+    div#contentArticle{
+        width: 95%;
+    }
+    div#comments{
+        width: 95%
+    }
+    div#infoEdA{
+        width: 95%
+    }
+    div#closeArticle{
+        width: 95%
+    }
+}
+
+/* CLASES */
+.eround{
+    border-radius: 10px;
+}
+
+.eround5{
+    border-radius: 5px;
+}
+
+.erounddown{
+    border-radius: 0 0 10px 10px;
+}
+
+.footerSpam{
+    font-size:10px;
+}

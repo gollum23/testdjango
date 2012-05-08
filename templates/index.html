@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Semanario Virtual Caja de Herramientas - Edición {{ edicion.ed }}</title>
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="/static/js/selectivizr-min.js"
+                ></script>
+    <![endif]-->
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0,
+          user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link href="/static/css/layout.css" rel="stylesheet"/>
+    <script type="text/javascript" src="/static/js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="/static/js/prefixfree.jquery.js"></script>
+
+</head>
+<body>
+    <div id="wrap">
+        <header class="erounddown">
+            <img src="/static/images/banners/header_{{ edicion.color }}.jpg"
+                 width="100%"
+                 height="100%"/>
+            <div id="infoEd">
+                <h3>Edición No: {{ edicion.ed }} del {{ edicion.dfrom }}
+                    a {{ edicion.dto }}</h3>
+            </div>
+        </header>
+            {% if edicion.bannerh %}
+                <article class="eround">
+                    <div id="binfo">
+                        <a href="{{ edicion.linkbanner }}" target="_blank"><img
+                            src="/media/{{ edicion.bannerh }}"
+                                 width="100%"
+                             height="100%"/></a>
+                    </div>
+                </article>
+            {% endif %}
+        {% if articulosN %}
+            <section>
+                {% for item in articulosN %}
+                    <article id="{{ item.id }}" class="eround">
+                        <div id="contentAbstract">
+                            <div id="thumbs">
+                                <img src="/media/{{ item.imgthums }}"
+                                     width="100%" height="100%"/>
+                            </div>
+                            <div id="title">
+                                <h2>{{ item.title }}</h2>
+                            </div>
+                            <div id="author">
+                                <h4>{{ item.author.name }}</h4>
+                                <h4>{{ item.author.bio }}</h4>
+                            </div>
+                            {% autoescape off %}
+                            <div id="abstrac">{{ item.abstract }}</div>
+                            {% endautoescape %}
+                            <div id="enlacesArticulo">
+                                {% if item.readmore %}
+                                <div id="readmore"><a
+                                        href="/{{ edicion.ed }}/articulo{{ item.order }}"><img src="/static/images/botones/leermas.png" alt="Leer más..."></a></div>
+                                {% endif %}
+                                {% if item.pdf %}
+                                <div id="pdf">
+                                    <a href="/media/{{ item.pdf }}"><img
+                                            src="/static/images/botones/descargarpdf.png" alt="Descargar PDF"></a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+            </section>
+        {% endif %}
+        {% if articulosI %}
+            <section>
+                <div id="sectionImg">
+                    <img
+                            src="/static/images/bannerinternacional_{{ edicion.color }}.jpg"
+                            width="100%" height="100%"/>
+                </div>
+                {% for item in articulosI %}
+                    <article id="{{ item.id }}" class="eround">
+                        <div id="contentAbstract">
+
+                            <div id="thumbs">
+                                <img src="/media/{{ item.imgthums }}"
+                                     width="100%" height="100%"/>
+                            </div>
+                            <div id="title">
+                                <h2>{{ item.title }}</h2>
+                            </div>
+                            <div id="author">
+                                <h3>{{ item.author.name }}</h3>
+                                <h3>{{ item.author.bio }}</h3>
+                            </div>
+                            {% autoescape off %}
+                                <div id="abstrac">{{ item.abstract }}</div>
+                            {% endautoescape %}
+                            <div id="enlacesArticulo">
+                                {% if item.readmore %}
+                                <div id="readmore"><a
+                                        href="/{{ edicion.ed }}/articulo{{ item.order }}"><img src="/static/images/botones/leermas.png" alt="Leer más..."></a></div>
+                                {% endif %}
+                                {% if item.pdf %}
+                                <div id="pdf">
+                                    <a href="/media/{{ item.pdf }}"><img
+                                            src="/static/images/botones/descargarpdf.png" alt="Descargar PDF"></a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+            </section>
+        {% endif %}
+        {%if agenda %}
+            <section>
+                <article>
+                    <h2>Agenda</h2>
+                </article>
+            </section>
+        {% endif %}
+        {% if humor %}
+            <section id="humor">
+                <div id="sectionImg">
+                    <img src="/static/images/bannerhumor_{{ edicion.color }}.jpg"
+                         width="100%" height="100%"/>
+                </div>
+                {% for item in humor %}
+                    <article class="eround">
+                        <div id="imgHumor">
+                            <img src="/media/{{ item.imgthums }}"
+                                 width="100%" height="100%"/>
+                        </div>
+                        <div id="readmore">
+                            <a href="humor"><img src="/static/images/botones/humor.png"></a>
+                        </div>
+                        <div id="creditosHumor" class="eround5">
+                            Fuente:
+                            leosatira.blogspot.com,
+                            bacteriaopina.blogspot.com,
+                            bettoespectador.blogspot.com,
+                            nojota.blogspot.com,
+                            matadorcartoons.blogspot.com,
+                            papetoons.blogspot.com,
+                            vladdomania.blogspot.com,
+                            mheo.blogspot.com, bonilperiodismo.blogspot.com,
+                            elespectador.com, semana.com,
+                            paquechupen.com, dinero.com
+                        </div>
+                    </article>
+                {% endfor %}
+            </section>
+        {% endif %}
+        <footer class="eround">
+            <div ><h5>Semanario Virtual Caja de Herramientas <br>
+                Corporación Viva la Ciudadanía - 20 Años<br>
+                Calle 54 No 10 - 81 Piso 7, Bogotá D.C., Colombia<br>
+                Telefono (0571)3480781</h5></div>
+            <div class="footerSpam"><strong>Importante:</strong>
+                Cada autor es responsable de sus ideas y no
+                compromete el pensamiento de Viva la Ciudadanía. Se permite la
+                reproducci&oacute;n de nuestros artículos siempre y cuando se
+                cite la fuente.</div>
+            <div class="footerSpam">De acuerdo con las normas
+                internacionales sobre SPAM, un e-mail no podr&aacute;   ser
+                considerado SPAM mientras incluya una forma de ser removido. Si
+                desea cancelar este servicio envié un e-mail a
+                <a href="mailto:semanariovirtual@viva.org.co">
+                    semanariovirtual@viva.org.co</a> escribiendo CANCELAR en
+                asunto (subject)</div>
+        </footer>
+    </div>
+    <div id="enlacessocial" class="eround5">
+        <script>function fbs_click()
+        {u=location.href;t=document.title;
+            window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');
+            return false;}</script><a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" class="fb_share_button" onClick="return fbs_click()" target="_blank" style="text-decoration:none;"><img src="/static/images/face_icon.jpg" border="0"/></a>
+        <script>function send_click() {data_url=location.href;
+            data_text=document.title;
+            window.open('http://twitter.com/share?count=none&text='+(data_text)+'&url='+encodeURIComponent(data_url)+'&via=semanarioviva','sharer','toolbar=0,status=0,width=626,height=436');
+            return false;}</script><a href="http://twitter.com/share"
+                                      class="twitter-share-button"
+                                      data-lang="es" onClick="return
+                                      send_click()" target="_blank"
+                                      style="text-decoration:none;">
+        <img src="/static/images/twitter_icon.jpg" border="0"/></a>
+    </div>
+</body>
+</html>

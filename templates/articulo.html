@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ detalle.title }}</title>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/static/js/selectivizr-min.js"
+            ></script>
+    <![endif]-->
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0,
+          user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link href="/static/css/layout.css" rel="stylesheet"/>
+    <script type="text/javascript" src="/static/js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="/static/js/prefixfree.jquery.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <img src="/static/images/banners/header_{{ edicion.color }}.jpg"
+                 width="100%"
+                 height="100%"/>
+            <!--<div id="infoEd">
+                <h5>Edición No: {{ edicion.ed }} del {{ edicion.dfrom }}
+                    a {{ edicion.dto }}</h5>
+            </div>-->
+        </header>
+        <section>
+            <article class="eround">
+                <div id="titleA">
+                    <h2>{{ detalle.title }}</h2>
+                </div>
+                <div id="authorA">
+                    <h4>{{ detalle.author.name }}</h4>
+                    <h4>{{ detalle.author.bio }}</h4>
+                </div>
+                <br /><br />
+                <div id="imgArticle">
+                    <img src="/media/{{ detalle.imgarticle }}"
+                         width="100%" height="100%"/>
+                </div>
+                {% autoescape off %}
+                    <div id="contentArticle">{{ detalle.content }}</div>
+                {% endautoescape %}
+                <div id="infoEdA">
+                    <h5>Edición No: {{ edicion.ed }} del {{ edicion.dfrom }}
+                        a {{ edicion.dto }}</h5>
+                    <p><strong>Importante:</strong> Cada autor es responsable
+                        de sus ideas y no compromete el pensamiento de Viva la
+                        Ciudadanía. Se permite la reproducción de nuestros
+                        artículos siempre y cuando se cite la fuente.</p>
+                </div>
+                <div id="closeArticle">
+                    <a href="javascript:history.back();"><img
+                            src="/static/images/botones/close.png"/></a>
+                </div>
+            </article>
+        </section>
+        <section>
+            <article class="eround">
+                <div id="comments">
+
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                        var disqus_shortname = 'corporacionvivalaciudadania'; // required: replace example with your forum shortname
+
+                        // The following are highly recommended additional parameters. Remove the slashes in front to use.
+                        var disqus_identifier =
+                                'svc0{{ edicion.ed }}-{{ detalle.order }}';
+                        var disqus_url = location.href;
+
+                        /* * * DON'T EDIT BELOW THIS LINE * * */
+                        (function() {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                    <noscript>
+                        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comentarios suministrados por Disqus.</a>
+                    </noscript>
+                    <a href="http://disqus.com" class="dsq-brlink">comentarios suministrados por <span class="logo-disqus">Disqus</span></a>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <div id="enlacessocial" class="eround5">
+        <script>function fbs_click()
+        {u=location.href;t=document.title;
+            window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');
+            return false;}</script><a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" class="fb_share_button" onClick="return fbs_click()" target="_blank" style="text-decoration:none;"><img src="/static/images/face_icon.jpg" border="0"/></a>
+        <script>function send_click() {data_url=location.href;
+            data_text=document.title;
+            window.open('http://twitter.com/share?count=none&text='+(data_text)+'&url='+encodeURIComponent(data_url)+'&via=semanarioviva','sharer','toolbar=0,status=0,width=626,height=436');
+            return false;}</script><a href="http://twitter.com/share"
+                                      class="twitter-share-button"
+                                      data-lang="es" onClick="return
+                                      send_click()" target="_blank"
+                                      style="text-decoration:none;">
+        <img src="/static/images/twitter_icon.jpg" border="0"/></a>
+    </div>
+</body>
+</html>
