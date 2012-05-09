@@ -12,8 +12,11 @@
     <link href="/static/css/layout.css" rel="stylesheet"/>
     <script type="text/javascript" src="/static/js/prefixfree.min.js"></script>
     <script type="text/javascript" src="/static/js/prefixfree.jquery.js"></script>
+    {% block head %}{% endblock %}
 </head>
 <body>
-
+    <div id="wrap">
+        {% block body %}{% endblock %}
+    </div>
 </body>
 </html>
