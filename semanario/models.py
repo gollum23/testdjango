@@ -1,7 +1,7 @@
 # coding=utf-8
 from django.db import models
 from ckeditor.fields import RichTextField
-from PIL import _imaging
+#from PIL import _imaging
 # Tupla con categorias
 categories = (('1','Nacional',),('2','Internacional',),('3','Agenda',),
               ('4','Humor',),)
@@ -20,8 +20,10 @@ class Author(models.Model):
 # Tabla para las ediciones
 class Edition(models.Model):
     def folder_up_banner(self,name):
-        """Funcion para generar la ruta para almacenar el banner del head
-        cuando exista"""
+        """
+        Funcion para generar la ruta para almacenar el banner del head
+        cuando exista
+        """
         banner = 'images/'+self.ed+'/'+name
         return banner
 
@@ -30,7 +32,7 @@ class Edition(models.Model):
     dto = models.DateField(verbose_name='Fecha hasta',)
     color = models.CharField(max_length=20,choices=colors,
                              verbose_name='Color de la edición')
-    bannerh = models.ImageField(upload_to=folder_up_banner,
+    bannerh = models.FileField(upload_to=folder_up_banner,
                                verbose_name='Banner header',blank=True)
     linkbanner = models.CharField(max_length=255, verbose_name='Enlace ' \
                                                                'banner',
