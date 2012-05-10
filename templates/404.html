@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Semanario Virtual Caja de Herramientas - Página no 
+{% extends 'base.html' %}
+{% block title %}
+    <title>Semanario Virtual Caja de Herramientas - Página no
         encontrada</title>
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="/static/js/selectivizr-min.js"
-            ></script>
-    <![endif]-->
-    <meta name="viewport"
-          content="width=device-width, height=device-height, initial-scale=1.0,
-          user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
-    <link href="/static/css/layout.css" rel="stylesheet"/>
-    <script type="text/javascript" src="/static/js/prefixfree.min.js"></script>
-    <script type="text/javascript" src="/static/js/prefixfree.jquery.js"></script>
-</head>
-<body>
+{% endblock %}
+{% block body %}
     <div id="wrap">
         <h2>Lo sentimos la página que está buscando no se encuentra</h2>
         <img src="/static/images/404.png" width="284" height="284"/>
         <p>Por favor verifique la dirección URL y vuelva a intentarlo</p>
     </div>
-</body>
-</html>
+{% endblock %}

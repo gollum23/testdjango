@@ -1,19 +1,19 @@
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
 <!DOCTYPE html>
 <html lang="es_ES">
 <head>
     <meta charset="utf-8">
     {% block title %}{% endblock %}
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="/static/js/selectivizr-min.js"
+    <script type="text/javascript" src="{{ STATIC_PREFIX }}js/selectivizr-min.js"
             ></script>
     <![endif]-->
     <meta name="viewport"
           content="width=device-width, height=device-height, initial-scale=1.0,
           user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
-    <link href="/static/css/layout.css" rel="stylesheet" type="text/css"
-          media="screen,projection"/>
-    <script type="text/javascript" src="/static/js/prefixfree.min.js"></script>
-    <script type="text/javascript" src="/static/js/prefixfree.jquery.js"></script>
+    <link href="{{ STATIC_PREFIX }}css/layout.css" rel="stylesheet" />
+    <script type="text/javascript" src="{{ STATIC_PREFIX }}js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_PREFIX }}js/prefixfree.jquery.js"></script>
     <script type="text/javascript">
 
         var _gaq = _gaq || [];
