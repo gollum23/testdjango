@@ -42,9 +42,10 @@ def humor(request,num):
         for file in os.listdir("."):
             d[x]=('/humor/'+num+'/'+file)
             x=x+1
+        dorder=sorted(d.items(), key=lambda  y: y[1])
     except os.error:
         raise Http404
-    return render_to_response('humor.html',{'imghumor':d})
+    return render_to_response('humor.html',{'imghumor':dorder})
 
 def custom404(self):
     return render_to_response('404.html')

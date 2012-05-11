@@ -72,20 +72,3 @@
         </section>
     </div>
 {% endblock %}
-{% block aux %}
-    <div id="enlacessocial" class="eround5">
-        <script>function fbs_click()
-        {u=location.href;t=document.title;
-            window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');
-            return false;}</script><a rel="nofollow" href="http://www.facebook.com/share.php?u=<;url>" class="fb_share_button" onClick="return fbs_click()" target="_blank" style="text-decoration:none;"><img src="/static/images/face_icon.jpg" border="0"/></a>
-        <script>function send_click() {data_url=location.href;
-            data_text=document.title;
-            window.open('http://twitter.com/share?count=none&text='+(data_text)+'&url='+encodeURIComponent(data_url)+'&via=semanarioviva','sharer','toolbar=0,status=0,width=626,height=436');
-            return false;}</script><a href="http://twitter.com/share"
-                                      class="twitter-share-button"
-                                      data-lang="es" onClick="return
-                                      send_click()" target="_blank"
-                                      style="text-decoration:none;">
-        <img src="/static/images/twitter_icon.jpg" border="0"/></a>
-    </div>
-{% endblock %}
