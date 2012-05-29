@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body{
     background: url("/static/images/furley_bg.png") fixed repeat;
     font-family: Verdana, Geneba, sans-serif;
@@ -5,20 +10,22 @@ body{
 }
 
 header{
-    background-color: #ffffff;
-    margin: 0;
-    margin-bottom: 10px;
-    padding: 0;
+
 }
 
 header img{
     max-height: 200px;
     max-width: 680px;
+
+}
+
+header div#infoEd{
+    background-color: #ffffff;
+    margin-top: -3px;
+    margin-bottom: 10px;
 }
 
 h1, h2, h3, h4, h5, h6{
-    margin: 0;
-    padding: 0;
 }
 
 article, footer{
@@ -63,12 +70,12 @@ div#sectionImg img{
 div#thumbs{
     display: inline-block;
     float: left;
-    margin: 0;
-    padding: 0;
     width: 20%;
 }
 div#thumbs img{
+    border-radius: 5px;
     max-height: 203px;
+    vertical-align: middle;
 }
 div#author{
     display: inline-block;
